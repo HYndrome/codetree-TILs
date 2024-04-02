@@ -19,7 +19,6 @@ int y_dice = 0;
 int x_dice = 0;
 int score_total = 0;
 
-
 void Input()
 {
 	cin >> N >> M;
@@ -31,7 +30,6 @@ void Input()
 		}
 	}
 }
-
 
 void CalScore(int y, int x)
 {
@@ -158,23 +156,23 @@ void Roll()
 	// 경계면일 경우 진행면 반대
 	if (y_dice == N - 1 && d_direct == 1)
 	{
-		d_direct = (d_direct + 2) % 2;
+		d_direct = (d_direct + 2) % 4;
 	}
 	if (y_dice == 0 && d_direct == 3)
 	{
-		d_direct = (d_direct + 2) % 2;
+		d_direct = (d_direct + 2) % 4;
 	}
 	if (x_dice == N - 1 && d_direct == 0)
 	{
-		d_direct = (d_direct + 2) % 2;
+		d_direct = (d_direct + 2) % 4;
 	}
 	if (x_dice == 0 && d_direct == 2)
 	{
-		d_direct = (d_direct + 2) % 2;
+		d_direct = (d_direct + 2) % 4;
 	}
 	Move(d_direct); // 이동
 	score_total += map_score[y_dice][x_dice]; // 점수 계산
-	// 방향 전환
+	// 방향 전환 주사위 숫자 기준
 	// 동일하다면 현재 방향으로 계속 진행
 	if (dice[0] > map[y_dice][x_dice]) // 크면 현재 진행방향에서 90' 시계방향으로 회전
 	{
