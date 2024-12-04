@@ -471,7 +471,9 @@ int main()
 			{
 				WarriorMove(m_route[i].y, m_route[i].x);
 
-				cout << cnt_move << " " << cnt_stone << " " << cnt_attack << "\n"; // 전사이동거리합 돌이된전사의수 메두사공격전사수			}
+				cout << cnt_move << " " << cnt_stone << " " << cnt_attack << "\n"; // 전사이동거리합 돌이된전사의수 메두사공격전사수
+				int debug = 1;
+			}	
 		}
 	}
 	return 0;
